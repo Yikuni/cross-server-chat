@@ -1,0 +1,6 @@
+name: CrossServerChat
+version: '${project.version}'
+main: com.yikuni.mc.crossserverchat.CrossServerChat
+api-version: 1.19
+authors: [ yikuni ]
+website: www.yikuni.com
