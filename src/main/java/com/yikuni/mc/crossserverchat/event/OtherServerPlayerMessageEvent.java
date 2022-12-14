@@ -4,7 +4,8 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class OtherServerPlayerChatEvent extends Event implements Cancellable {
+
+public class OtherServerPlayerMessageEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
     @Override
@@ -17,9 +18,15 @@ public class OtherServerPlayerChatEvent extends Event implements Cancellable {
 
     private final String msg;
     private final String sender;
-    public OtherServerPlayerChatEvent(String sender, String msg) {
+    private final String to;
+    public OtherServerPlayerMessageEvent(String sender, String to, String msg) {
         this.msg = msg;
         this.sender = sender;
+        this.to = to;
+    }
+
+    public String getTo() {
+        return to;
     }
 
     public String getMsg() {
